@@ -1,13 +1,17 @@
 <script setup>
 import { RouterLink, useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { useStore } from "../store"
 
+const store = useStore();
 const router = useRouter();
 const password = ref('');
+const email = ref('');
 
 const handleLogin = () => {
   if (password.value === "12345") {
-    router.push("/movies");
+    store.email = email.value;
+    router.push("/movies/all");
   } else {
     alert("Invalid Password");
   }
@@ -24,7 +28,7 @@ const handleLogin = () => {
     <div class="form-container">
       <h2>Login to Your Account</h2>
       <form @submit.prevent="handleLogin">
-        <input type="email" placeholder="Email" class="input-field" required />
+        <input v-model="email" type="email" placeholder="Email" class="input-field" required />
         <input v-model="password" type="password" placeholder="Password" class="input-field" required />
         <button type="submit" class="button login">Login</button>
       </form>
