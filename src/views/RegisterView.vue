@@ -16,7 +16,7 @@ if (password.value === restatepassword.value) {
   store.email = email.value;
   store.firstname = firstname.value
   store.lastname = lastname.value
-   router.push("/movies/all");
+   router.push("/movies");
   } else {
     alert("Invalid Password");
   }
