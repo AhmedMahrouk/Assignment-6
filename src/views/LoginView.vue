@@ -11,7 +11,7 @@ const email = ref('');
 const handleLogin = () => {
   if (password.value === "12345") {
     store.email = email.value;
-    router.push("/movies/all");
+    router.push("/movies");
   } else {
     alert("Invalid Password");
   }
