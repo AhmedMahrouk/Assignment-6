@@ -17,9 +17,9 @@ store.lastname = lastName.value
 <template>
 <body>
 <div class="settings-container">
-  <h1>{{ `Email: ${store.email}!` }}</h1>
-  <h1>{{ `First Name: ${store.firstname}!` }}</h1>
-  <h1>{{ `Last Name: ${store.lastname}!` }}</h1>
+  <h1>{{ `Email: ${store.email}` }}</h1>
+  <h1>{{ `First Name: ${store.firstname}` }}</h1>
+  <h1>{{ `Last Name: ${store.lastname}` }}</h1>
 
   <form @submit.prevent="changeFirstname">
     <input v-model="firstName" type="text" placeholder="First Name" class="input-field" required>
