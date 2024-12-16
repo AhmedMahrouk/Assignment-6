@@ -11,7 +11,21 @@ const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.par
 
 <template>
   <div class="movie-detail"> 
-    <button @click="store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })"class="movie-site">Buy</button>
+    <div v-if="store.cart.has(route.params.id)">
+      <button 
+      @click="store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })" 
+      class="movie-site">
+      Added
+      </button>
+    </div>
+    <div v-else>
+      <button 
+      @click="store.cart.set(route.params.id, { title: response.data.original_title, url: response.data.poster_path })" 
+      class="movie-site">
+      Buy
+    </button>
+</div>
+
     <h1 class="movie-title">{{ response.data.original_title }}</h1>
     <p class="movie-overview">{{ response.data.overview }}</p>
     <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>

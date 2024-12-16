@@ -7,8 +7,6 @@
         <h1 class="hero-title">Welcome to Kinema</h1>
         <p class="hero-subtitle">Your favorite platform to explore movies, series, and more.</p>
         <section class="sign-up">
-        <RouterLink to="/register" class="button register">Register</RouterLink>
-        <RouterLink to="/login" class="button login">Login</RouterLink>
     </section>
     </div>
 </section>

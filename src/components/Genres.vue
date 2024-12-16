@@ -23,7 +23,6 @@ onMounted(async () => {
 
 <template>
   <div class="movie-gallery">
-    <RouterLink to="/cart" class="cart">Cart</RouterLink>
     <select v-model="selectedGenre" @change="getMovieByGenre()">
       <option v-for="genre of genres" :value="genre.id">{{ genre.genreName }}</option>
     </select>
